@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimesheetComponent implements OnInit {
 
+  days = new Array(31);
+
   constructor() { }
 
   ngOnInit() {

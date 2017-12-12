@@ -7,7 +7,7 @@ div {
     background-color: $dark;
     color: $light;
     height: 50px;
-    width: 100%;
+    width: calc(100% - 50px);
 
     span {
         font-size: 20px;
