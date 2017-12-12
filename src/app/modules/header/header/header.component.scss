@@ -1,0 +1,15 @@
+@import 'src/app/scss/global-styling';
+
+div {
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    background-color: $dark;
+    color: $light;
+    height: 50px;
+    width: 100%;
+
+    span {
+        font-size: 20px;
+    }
+}
