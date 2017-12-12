@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { TimesheetComponent } from './timesheet/timesheet.component';
 
 @NgModule({
   imports: [
     CommonModule
+  ],
+  providers: [
+    DatePipe
   ],
   declarations: [TimesheetComponent]
 })
