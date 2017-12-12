@@ -1,7 +1,10 @@
 <div class="container">
   <div class="calender">
     <div class="day" *ngFor="let day of days" [ngClass]="{'disabled': !day}">
-      <span *ngIf="day">{{day.day | date: 'EEE MMM d'}}</span>
+      <div class="content" *ngIf="day" (click)="addRandomFiller(day)">
+        <span class="date" *ngIf="day">{{day.day | date: 'EEE MMM d'}}</span>
+        <div class="block" *ngFor="let task of day.tasks" [style.height.%]="(task / 8) * 50"></div>
+      </div>
     </div>
   </div>
 </div>

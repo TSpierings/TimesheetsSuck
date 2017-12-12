@@ -3,6 +3,7 @@ import { DatePipe } from '@angular/common';
 
 export interface Day {
   day: Date;
+  tasks: Array<number>;
 }
 
 @Component({
@@ -34,10 +35,19 @@ export class TimesheetComponent implements OnInit {
     let dayCursor = new Date(thisYear, thisMonth, 1);
     for (let i = 0; dayCursor.getMonth() === thisMonth; i++) {
       this.days[startDayOfWeek + i - 1] = {
-        day: dayCursor
+        day: dayCursor,
+        tasks: []
        };
 
       dayCursor = new Date(thisYear, thisMonth, i + 2);
+    }
+  }
+
+  public addRandomFiller(day: Day) {
+    const ammount = Math.floor(Math.random() * 4);
+
+    for (let i = 0; i < ammount; i++) {
+      day.tasks.push(Math.floor(Math.random() * (12 / ammount)));
     }
   }
 
